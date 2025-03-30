@@ -1,42 +1,33 @@
 <#
 .SYNOPSIS
 Creates PRTG sensors for Meraki MT10 and MT11 temperature/humidity sensors.
-
 .DESCRIPTION
 This script identifies MT10 and MT11 sensors in a Meraki organization and creates PRTG sensors for them.
 The script allows interactive selection of organization, networks, and sensor types to monitor.
 It creates exexml type sensors in PRTG that will call the appropriate PowerShell script for each device.
-
 .PARAMETER PRTGServer
 The hostname or IP address of the PRTG server.
-
 .PARAMETER PRTGUsername
 The username to access the PRTG API.
-
 .PARAMETER PRTGPasshash
 The passhash for PRTG authentication (not the password).
-
 .PARAMETER PRTGDeviceId
 The ID of the PRTG device under which to create the sensors.
-
 .PARAMETER MerakiApiKey
 The API key for accessing the Meraki API. If not provided, the script will prompt for it.
-
 .INPUTS
 None.
-
 .OUTPUTS
 Creates sensors in the PRTG system for each selected Meraki MT device.
-
 .NOTES
 Author: Richard Travellin
 Date: March 30, 2025
 Version: 1.0
-
+.LINK
+https://github.com/CC-Digital-Innovation/PRTG-Meraki-MT-Sensors
 .EXAMPLE
 .\MerakiMTPRTGSensorCreator.ps1 -PRTGServer "prtg.example.com" -PRTGUsername "admin" -PRTGPasshash "1234567890" -PRTGDeviceId 1001
 This example connects to the PRTG server, prompts for the Meraki API key, and then guides through sensor creation.
-
 .EXAMPLE
 .\MerakiMTPRTGSensorCreator.ps1 -PRTGServer "prtg.example.com" -PRTGUsername "admin" -PRTGPasshash "1234567890" -PRTGDeviceId 1001 -MerakiApiKey "YourApiKey"
 This example provides the Meraki API key directly as a parameter without prompting.
